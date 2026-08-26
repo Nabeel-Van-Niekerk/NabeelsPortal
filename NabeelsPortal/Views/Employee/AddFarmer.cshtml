@@ -1,0 +1,47 @@
+﻿@model NabeelsPortal.DTO.FarmerRegistrationDto
+
+@{
+    ViewData["Title"] = "Add Farmer Profile";
+}
+
+<div class="container">
+    <h2>Add Farmer Profile</h2>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    <form method="post">
+        <div class="form-group mb-3">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="contactInfo">Contact Info</label>
+            <input type="text" class="form-control" id="contactInfo" name="contactInfo" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+        </div>
+        <input type="hidden" id="role" name="role" value="Employee" />
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+</div>
+
+<div class="mt-3 d-flex justify-content-center">
+    <a href="/Employee" class="btn btn-primary btn-lg">Back to Dashboard</a>
+</div>

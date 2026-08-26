@@ -1,0 +1,31 @@
+﻿@model List<NabeelsPortal.Models.Farmer>
+
+<h1 class="mb-5">List of Farmers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact Info</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var farmer in Model)
+        {
+            <tr class="align-middle">
+                <td>@farmer.Name</td>
+                <td>@farmer.ContactInfo</td>
+                <td>@farmer.Email</td>
+                <td>
+                    <a class="btn btn-primary btn-lg my-2" asp-controller="Employee" asp-action="ViewProducts" asp-route-farmerId="@farmer.FarmerId">View Products</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-5 d-flex justify-content-center">
+    <a href="/Employee" class="btn btn-primary btn-lg">Back to Dashboard</a>
+</div>
